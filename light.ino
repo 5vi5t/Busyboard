@@ -1,9 +1,8 @@
 void light() {
-  static bool buttonFlag;
   static bool timerFlag;
 
   if (buttonLight.press()) {
-    buttonFlag = true;
+    buttonLightFlag = true;
     timerFlag = true;
     timerLight.start();
   }
@@ -11,10 +10,10 @@ void light() {
     timerFlag = false;
   }
   if (buttonLight.release()) {
-    buttonFlag = false;
+    buttonLightFlag = false;
     timerLight.stop();
   }
-  if (buttonFlag && timerFlag) {
+  if (buttonLightFlag && timerFlag) {
     digitalWrite(LIGHT_PIN, 1);
   } else {
     digitalWrite(LIGHT_PIN, 0);

@@ -26,6 +26,10 @@ EncButton<EB_TICK, BUTTON_LIGHT_PIN> buttonLight;
 #include <microLED.h>
 microLED<NUMLEDS, STRIP_PIN, MLED_NO_CLOCK, LED_WS2812, ORDER_GRB, CLI_LOW> strip;
 
+bool buttonDingleFlag;
+bool buttonStripFlag;
+bool buttonLightFlag;
+
 void setup() {
   pinMode(BUTTON_DINGLE_PIN, INPUT_PULLUP);
   pinMode(DINGLE_PIN, OUTPUT);
@@ -44,8 +48,7 @@ void loop() {
   buttonLight.tick();
 
   bipBip();
-
   runningDots();
-
   light();
+  starWars();
 }

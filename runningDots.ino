@@ -1,12 +1,11 @@
 void runningDots() {
   static byte ledCounter = 0;
   static byte colorCounter = 0;
-  static bool buttonFlag;
   static bool periodFlag;
   static bool timerFlag;
-  
+
   if (buttonStrip.press()) {
-    buttonFlag = true;
+    buttonStripFlag = true;
     periodFlag = true;
     timerFlag = true;
     speedStrip.start();
@@ -22,11 +21,11 @@ void runningDots() {
     periodFlag = false;
   }
   if (buttonStrip.release()) {
-    buttonFlag = false;
+    buttonStripFlag = false;
     speedStrip.stop();
     timerStrip.stop();
   }
-  if (buttonFlag && timerFlag) {
+  if (buttonStripFlag && timerFlag) {
     if (periodFlag) {
       for (int i = 0; i < NUMLEDS - 1; i++) {
         strip.leds[i] = strip.leds[i + 1];

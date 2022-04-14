@@ -1,5 +1,4 @@
 void bipBip() {
-  static bool buttonFlag;
   static bool periodFlag;
   static bool timerFlag;
   static bool speedFlag;
@@ -8,7 +7,7 @@ void bipBip() {
   byte crt;
 
   if (buttonDingle.press()) {
-    buttonFlag = true;
+    buttonDingleFlag = true;
     periodFlag = true;
     timerFlag = true;
     speedFlag = true;
@@ -30,12 +29,12 @@ void bipBip() {
     speedFade.stop();
   }
   if (buttonDingle.release()) {
-    buttonFlag = false;
+    buttonDingleFlag = false;
     periodDingle.stop();
     timerDingle.stop();
     speedFade.stop();
   }
-  if (buttonFlag && timerFlag) {
+  if (buttonDingleFlag && timerFlag) {
     if (periodFlag) {
       analogWrite(DINGLE_PIN, 10);
       if (speedFlag && duty <= 255) {
