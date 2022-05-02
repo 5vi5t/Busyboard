@@ -12,6 +12,8 @@ void runningDots() {
     timerStrip.start();
   }
   if (timerStrip.tick()) {
+    buttonStripFlag = false;
+    periodFlag = false;
     timerFlag = false;
     speedStrip.stop();
   }
@@ -22,6 +24,8 @@ void runningDots() {
   }
   if (buttonStrip.release()) {
     buttonStripFlag = false;
+    periodFlag = false;
+    timerFlag = false;
     speedStrip.stop();
     timerStrip.stop();
   }

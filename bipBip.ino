@@ -24,12 +24,18 @@ void bipBip() {
     speedFlag = false;
   }
   if (timerDingle.tick()) {
+    buttonDingleFlag = false;
+    periodFlag = false;
     timerFlag = false;
+    speedFlag = false;
     periodDingle.stop();
     speedFade.stop();
   }
   if (buttonDingle.release()) {
     buttonDingleFlag = false;
+    periodFlag = false;
+    timerFlag = false;
+    speedFlag = false;
     periodDingle.stop();
     timerDingle.stop();
     speedFade.stop();

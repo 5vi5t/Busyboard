@@ -7,10 +7,12 @@ void light() {
     timerLight.start();
   }
   if (timerLight.tick()) {
+    buttonLightFlag = false;
     timerFlag = false;
   }
   if (buttonLight.release()) {
     buttonLightFlag = false;
+    timerFlag = false;
     timerLight.stop();
   }
   if (buttonLightFlag && timerFlag) {
