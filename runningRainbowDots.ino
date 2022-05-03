@@ -1,4 +1,4 @@
-void runningDots() {
+void runningRainbowDots() {
   static byte ledCounter = 0;
   static byte colorCounter = 0;
   static bool periodFlag;

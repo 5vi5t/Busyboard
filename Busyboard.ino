@@ -48,7 +48,7 @@ void loop() {
   buttonLight.tick();
 
   bipBip();
-  runningDots();
+  runningRainbowDots();
   light();
   starWars();
 }

@@ -28,12 +28,10 @@ void starWars() {
     tone(DINGLE_PIN, notes[index], times[index] * 2);
     digitalWrite(LED1_PIN, 1);
     digitalWrite(LED2_PIN, 1);
-    digitalWrite(LIGHT_PIN, 1);
     delay(times[index]);
     noTone(DINGLE_PIN);
     digitalWrite(LED1_PIN, 0);
     digitalWrite(LED2_PIN, 0);
-    digitalWrite(LIGHT_PIN, 0);
     delay(times[index]);
     index++;
     if (index >= 39) {
